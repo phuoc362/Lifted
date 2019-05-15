@@ -4,18 +4,18 @@
 3. lọc bỏ các phần gap trên new gennome
 4. lọc bỏ các phần không tốt: lặp lại, alt chromosome, not CG (CpGs, WGBS),...
 ###############################################################################
-###############################################################################
-1. lọc bỏ các phần gap trên gennome cũ
+
+#1. lọc bỏ các phần gap trên gennome cũ
 
 
 
 
-2. chạy chuyển đổi bằng liftOver tool
+#2. chạy chuyển đổi bằng liftOver tool
 
 huong dan cach loai bo cac phan khong tot trong mau CpGs va chipseq
 tải tool liftOver từ ucsc thttp://hgdownload.soe.ucsc.edu/admin/exe/
 tải chain file chhttp://hgdownload.soe.ucsc.edu/goldenPath/hg19/liftOver/
-# install 
+# How to install 
 tạo path tới liftOver tool:
 export PATH=$PATH:/path/to/file/liftOvertool/
 # sử dụng:
@@ -68,10 +68,10 @@ options:
    -errorHelp              Explain error messages
 
 
-3. lọc bỏ các phần gap trên new gennome
+#3. lọc bỏ các phần gap trên new gennome
 
 
 
-4. lọc bỏ các phần không tốt: lặp lại, alt chromosome, not CG (CpGs, WGBS),...
+#4. lọc bỏ các phần không tốt: lặp lại, alt chromosome, not CG (CpGs, WGBS),...
 
 
