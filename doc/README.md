@@ -13,8 +13,8 @@
 ## 2. chạy chuyển đổi bằng liftOver tool
 
 huong dan cach loai bo cac phan khong tot trong mau CpGs va chipseq
-tải tool liftOver từ ucsc thttp://hgdownload.soe.ucsc.edu/admin/exe/
-tải chain file chhttp://hgdownload.soe.ucsc.edu/goldenPath/hg19/liftOver/
+* tải tool liftOver từ ucsc http://hgdownload.soe.ucsc.edu/admin/exe/
+* tải chain file http://hgdownload.soe.ucsc.edu/goldenPath/hg19/liftOver/
 # How to install 
 tạo path tới liftOver tool:
 export PATH=$PATH:/path/to/file/liftOvertool/
