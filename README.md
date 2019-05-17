@@ -26,11 +26,10 @@ huong dan cach loai bo cac phan khong tot trong mau CpGs va chipseq
 tạo path tới liftOver tool:
 
 export PATH=$PATH:/path/to/file/liftOvertool/
-# hướng dẫn sử dụng t:
-### kent source version 381 ###
+# hướng dẫn sử dụng liftOver tool - kent source version 381 
 liftOver - Move annotations from one assembly to another
-usage:
-   liftOver oldFile map.chain newFile unMapped
+### usage:
+   #### liftOver oldFile map.chain newFile unMapped
 
 oldFile and newFile are in bed format by default, but can be in GFF and
 maybe eventually others with the appropriate flags below.
