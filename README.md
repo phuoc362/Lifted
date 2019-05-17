@@ -6,7 +6,12 @@ liftOver_filter
 3. lọc bỏ các phần gap trên new gennome
 4. lọc bỏ các phần không tốt: lặp lại, alt chromosome, not CG (CpGs, WGBS),...
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+yêu cầu dữ liệu đầu vào phải theo dạng bed file có 4 cột như sau:
+#### đối với mẫu WGBS/CpGs/Chipseq:
+chromosome"tab"start"tab"end"tab"value
+#### tên file đầu vào phải ở dạng .bed
+#### các file dữ liệu để ở 1 thư mục riêng chỉ có file .bed
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## 1. lọc bỏ các phần gap trên gennome cũ
 
 
@@ -77,4 +82,6 @@ Loại bỏ các thành phần gap sau khi chuyển đổi
 
 ## 4. lọc bỏ các phần không tốt: lặp lại, alt chromosome, not CG (CpGs, WGBS),...
 sau khi chuyển đổi sẽ tạo ra các trình tự trên vị trí không mong muốn như alt chr, các đoạn lặp lại, hay các đoạn không phải CG (đối với WGBS/ CpGs). c
+
+#### l
 
