@@ -14,7 +14,7 @@ mkdir input output process
 # awk 'NF==4{print "input have 4 columns"}else {print "stop run"}' $i  ?
 # done
 
-cp *.bed *.bedGraph input/
+cp *.bed  input/
 cd input
 ##########################################  length of CpGs =1
 
@@ -58,7 +58,7 @@ mkdir input output process
 # awk 'NF==4{print "input have 4 columns"}else {print "stop run"}' $i  ?
 # done
 
-cp *.bed *.bedGraph input/
+cp *.bed  input/
 cd input
 ##########################################  create ID in column 5
 for i in `ls *.bed `; do echo $i
