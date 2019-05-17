@@ -1,10 +1,9 @@
 # liftOver_filter
-liftOver_filter
 # liftOver_filter function proccess
-1. lọc bỏ các phần gap trên gennome cũ
-2. chạy chuyển đổi bằng liftOver tool
-3. lọc bỏ các phần gap trên new gennome
-4. lọc bỏ các phần không tốt: lặp lại, alt chromosome, not CG (CpGs, WGBS),...
+> 1. lọc bỏ các phần gap trên gennome cũ
+> 2. chạy chuyển đổi bằng liftOver tool
+> 3. lọc bỏ các phần gap trên new gennome
+> 4. lọc bỏ các phần không tốt: lặp lại, alt chromosome, not CG (CpGs, WGBS),...
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 yêu cầu dữ liệu đầu vào phải theo dạng bed file có 4 cột như sau:
 #### đối với mẫu WGBS/CpGs/Chipseq:
@@ -13,9 +12,7 @@ chromosome"tab"start"tab"end"tab"value
 #### các file dữ liệu để ở 1 thư mục riêng chỉ có file .bed
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## 1. lọc bỏ các phần gap trên gennome cũ
-
-
-
+loại bỏ các vị trí tương ứng phần gap trên chain file để thu được chỉ các vị trí tương thích với new reference
 
 ## 2. chạy chuyển đổi bằng liftOver tool
 
@@ -37,42 +34,42 @@ The map.chain file has the old genome as the target and the new genome
 as the query.
 
 ***********************************************************************
-WARNING: liftOver was only designed to work between different
-         assemblies of the same organism. It may not do what you want
+WARNING: liftOver was only designed to work between different*.
+     assemblies of the same organism. It may not do what you want
          if you are lifting between different organisms. If there has
          been a rearrangement in one of the species, the size of the
-         region being mapped may change dramatically after mapping.
+        region being mapped may change dramatically after mapping.
 ***********************************************************************
 
-options:
-   -minMatch=0.N Minimum ratio of bases that must remap. Default 0.95
-   -gff  File is in gff/gtf format.  Note that the gff lines are converted
+options:<br />
+   - minMatch=0.N Minimum ratio of bases that must remap. Default 0.95 <br />
+   - gff  File is in gff/gtf format.  Note that the gff lines are converted 
          separately.  It would be good to have a separate check after this
          that the lines that make up a gene model still make a plausible gene
-         after liftOver
-   -genePred - File is in genePred format
-   -sample - File is in sample format
-   -bedPlus=N - File is bed N+ format (i.e. first N fields conform to bed format)
-   -positions - File is in browser "position" format
-   -hasBin - File has bin value (used only with -bedPlus)
-   -tab - Separate by tabs rather than space (used only with -bedPlus)
-   -pslT - File is in psl format, map target side only
-   -ends=N - Lift the first and last N bases of each record and combine the
-             result. This is useful for lifting large regions like BAC end pairs.
-   -minBlocks=0.N Minimum ratio of alignment blocks or exons that must map
-                  (default 1.00)
-   -fudgeThick    (bed 12 or 12+ only) If thickStart/thickEnd is not mapped,
+         after liftOver <br />
+   - genePred - File is in genePred format <br />
+   - sample - File is in sample format <br />
+   - bedPlus=N - File is bed N+ format (i.e. first N fields conform to bed format) <br />
+   - positions - File is in browser "position" format <br />
+   - hasBin - File has bin value (used only with -bedPlus) <br />
+   - tab - Separate by tabs rather than space (used only with -bedPlus) <br />
+   - pslT - File is in psl format, map target side only <br />
+   - ends=N - Lift the first and last N bases of each record and combine the
+             result. This is useful for lifting large regions like BAC end pairs. <br />
+   - minBlocks=0.N Minimum ratio of alignment blocks or exons that must map
+                  (default 1.00) <br />
+   - fudgeThick    (bed 12 or 12+ only) If thickStart/thickEnd is not mapped,
                   use the closest mapped base.  Recommended if using 
-                  -minBlocks.
-   -multiple               Allow multiple output regions
-   -noSerial               In -multiple mode, do not put a serial number in the 5th BED column
+                  -minBlocks. <br />
+  - multiple               Allow multiple output regions <br />
+  - noSerial               In -multiple mode, do not put a serial number in the 5th BED column <br />
    -minChainT, -minChainQ  Minimum chain size in target/query, when mapping
-                           to multiple output regions (default 0, 0)
-   -minSizeT               deprecated synonym for -minChainT (ENCODE compat.)
-   -minSizeQ               Min matching region size in query with -multiple.
-   -chainTable             Used with -multiple, format is db.tablename,
-                               to extend chains from net (preserves dups)
-   -errorHelp              Explain error messages
+                           to multiple output regions (default 0, 0) <br />
+   - minSizeT               deprecated synonym for -minChainT (ENCODE compat.) <br />
+   - minSizeQ               Min matching region size in query with -multiple. <br />
+   - chainTable             Used with -multiple, format is db.tablename,
+                               to extend chains from net (preserves dups) <br />
+   - errorHelp              Explain error messages <br />
 
 
 ## 3. lọc bỏ các phần gap trên new gennome
