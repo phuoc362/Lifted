@@ -8,8 +8,7 @@
 yêu cầu dữ liệu đầu vào:
 #### cấu trúc file đầu vào phai 4 cột là: chromosome, start, end, value
 #### tên file đầu vào phải ở dạng đuôi .bed
-#### các file dữ liệu để ở 1 thư mục riêng chỉ có file đuôi .bed
-#### Nếu là mẫu CpGs thì khoảng cách giữa star và end là 1 nucleotic
+#### các file samples và file trong mục data để ở chung 1 thư mục riêng
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ## cài đặt liftOver UCSC:
