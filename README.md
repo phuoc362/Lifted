@@ -23,6 +23,6 @@ export PATH=$PATH:/path/to/file/liftOvertool/
 # hướng dẫn sử dụng epi_liftOver
 
 ## đối với loại mẫu CPGs
-chmod +x setup_CpGs.sh
+sh setup_CpGs.sh
 ## đối với loại mẫu khác
-chmod +x setup_chipseq.sh
+sh setup_chipseq.sh
