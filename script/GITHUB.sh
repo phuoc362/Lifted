@@ -7,14 +7,14 @@
 
 
 mkdir input output process
-
+mv <(hg19.between2un-gapped.bed hg19.bgapped.bed hg19.tgapped.bed hg38.between2un-gapped.bed hg38.bgapped.bed hg38.tgapped.bed blacklist.hg19.bed blacklist.hg38.bed) /process/ 
 ########################################## input filename in bed file ; have 4 column with chr, start, end, value
 ##########################################
 # for i in `ls *.bed *.bedGraph`; do echo $i
 # awk 'NF==4{print "input have 4 columns"}else {print "stop run"}' $i  ?
 # done
 
-cp *.bed  input/
+mv *.bed  input/
 cd input
 ##########################################  length of CpGs =1
 
