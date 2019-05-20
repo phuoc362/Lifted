@@ -17,5 +17,10 @@ yêu cầu dữ liệu đầu vào:
 # How to install liftOver UCSC
 tạo path tới liftOver tool:
 export PATH=$PATH:/path/to/file/liftOvertool/
-# hướng dẫn sử dụng epiliftOver
-epiliftOver input output
+
+# hướng dẫn sử dụng epi_liftOver
+
+## đối với loại mẫu CPGs
+chmod +x setup_CpGs.sh
+## đối với loại mẫu khác
+chmod +x setup_chipseq.sh
