@@ -11,17 +11,16 @@ yêu cầu dữ liệu đầu vào:
 #### các file samples và file trong mục data để ở chung 1 thư mục riêng
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-## cài đặt liftOver UCSC:
-* tải tool liftOver từ ucsc http://hgdownload.soe.ucsc.edu/admin/exe/
-* tải chain file http://hgdownload.soe.ucsc.edu/goldenPath/hg19/liftOver/
-* tải các dữ liệu trong phần data để chung thư mục với mẫu:  hg19.between2un-gapped.bed; hg19.gap.and.blacklist.bed; blacklist.hg19.bed
-# nstall liftOver UCSC
+## requỉre fỏ run this tool:
+* Download and install  liftOver tool from UCSC:  http://hgdownload.soe.ucsc.edu/admin/exe/
+* Download chain file http://hgdownload.soe.ucsc.edu/goldenPath/hg19/liftOver/
+* Download template:  hg19.between2un-gapped.bed; hg19.bgap.tgap.and.blacklist.bed; remove.bed(only for CpGs)
+# install liftOver UCSC
 tạo path tới liftOver tool:
 export PATH=$PATH:/path/to/file/liftOvertool/
 
-# hướng dẫn sử dụng epi_liftOver
-
+# hướng dẫn sử dụng 
 ## đối với loại mẫu CPGs
-sh setup_CpGs.sh
+sh liftedCpGs.sh inputfile  output_liffted_name_file output_unlifted_name_file 
 ## đối với loại mẫu khác
-sh setup_chipseq.sh
+sh lifted.sh  inputfile  output_liffted_name_file output_unlifted_name_file
