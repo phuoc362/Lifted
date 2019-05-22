@@ -30,23 +30,6 @@ rm temp*
 
 
 
-## kiem tra length thay doi, them filter duplication, chr_, 
-
-
-# chay thu full cpgs
-# chay chipseq ESRR1
-# so sanh ket qua: so Cpgs, so length, ..... doc tren bai viet so sanh voi segment
-
-
-# y nhu hinh so 3
-# esrr1 hinh 7,8
-
-
-
-
-
-
-
 
 
 
