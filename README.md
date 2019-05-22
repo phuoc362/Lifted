@@ -19,6 +19,6 @@ export PATH=$PATH:/path/to/file/liftOvertool/
 
 # Manual
 ## for CPGs samples:
-sh liftedCpGs.sh inputfile     output_liffted_name_file      output_unlifted_name_file 
+sh liftedCpGs.sh inputfile     output.liffted.name.file      output.unlifted.name.file 
 ## another samples:
-sh lifted.sh  inputfile       output_liffted_name_file        output_unlifted_name_file
+sh lifted.sh  inputfile     output.liffted.name.file      output.unlifted.name.file 
