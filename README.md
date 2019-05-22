@@ -1,4 +1,4 @@
-# Epi_liftOver
+# liftOver filter tool
 > 1. lọc bỏ các phần gap trên gennome cũ
 > 2. chạy chuyển đổi bằng liftOver tool
 > 3. lọc bỏ các phần gap trên new gennome
