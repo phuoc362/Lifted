@@ -32,7 +32,7 @@ sh liftedCpGs.lifted.less_conservative.sh sh____inputfile____output.liffted.name
 ### for CPGs samples use less_conservative filtered:
 sh liftedCpGs.lifted.less_conservative.sh sh____inputfile____output.liffted.name.file____output.unlifted.name.file
 
-### Exsample compare results on ESR1 and full CPGs
+### Exsample compare filter results on ESR1(chipseq) and full CPGs(WGBS)
 
 ![Picture4](https://user-images.githubusercontent.com/19143879/58645815-4623db00-832e-11e9-9d6a-4ab9fb4581a2.png)
 ##### compare ratio CpGs/intervals chipseq between conservative - less_conservative and segment filtered on Full CpGs and ESR1
