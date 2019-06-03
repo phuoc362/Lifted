@@ -7,14 +7,10 @@
 #### required hg19ToHg38.over.chain file
 #### required liftOver tools
 
-
-
 ### input
 bedpath=$1
 outputmap=$2
 outputunmap=$3
-
-
 
 # format bed file with 4 column: chromosome_start_end_value
 awk '{print $1"\t"$2"\t"$3"\t"$4"\t"$1"."$2"."$3}' $bedpath| sort -k1,1 -k2,2n  >temp0
@@ -34,24 +30,4 @@ sort -k1,1 -k2,2n temp2|grep -E "chr(.|..)[[:blank:]]"|sort -k5,5|uniq -f4 -u|so
 bedtools merge -i  temp002 -c 5 -o collapse -delim "_" > temp003
 awk '{if($5!~"_"){print $0}}' temp003|sort -k1,1 -k2,2n > $outputmap
 
-
 rm temp*
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
