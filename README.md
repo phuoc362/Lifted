@@ -59,7 +59,7 @@ sh cLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unli
 sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
 
 ## Examples
-### Examples of comparing *Lifted* (*cLifted* and *lLifted*) with *UCSC liftOver*, *segment_liftover* on ESR1 (ChIP-Seq) and full CPGs (WGBS)
+### Comparison of *Lifted* (*cLifted* and *lLifted*) with *UCSC liftOver*, *segment_liftover* on ESR1 (ChIP-Seq) and full CPGs (WGBS)
 
 
 
