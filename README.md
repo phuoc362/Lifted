@@ -49,16 +49,16 @@ export PATH=$PATH:/path/to/file/liftOvertool/
 
 
 ## Command to run Lifted
-### cLifted_CpG:
+### Conservative Lifted for WGBS:
 sh cLifted_CpG.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
-### another samples use conservative filtered:
+### Less conservative Lifted for WGBS:
 sh lLifted_CpG.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
-### for CPGs samples use less_conservative filtered:
+### Conservative Lifted for ChIP-Seq:
 sh cLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
-### for CPGs samples use less_conservative filtered:
-sh lLifted_interval.sh chain_file input.bed output.lifted.bed output.unlifted.bed
+### Less conservative Lifted for ChIP-Seq:
+sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
 
-### Exsample compare filter results on ESR1(chipseq) and full CPGs(WGBS)
+### Examples of comparing lifted (*cLifted* and *lLifted*) with *UCSC liftOver*, *segment_liftover* on ESR1 (ChIP-Seq) and full CPGs (WGBS)
 
 ![Picture4](https://user-images.githubusercontent.com/19143879/58645815-4623db00-832e-11e9-9d6a-4ab9fb4581a2.png)
 ##### compare ratio CpGs/intervals chipseq between conservative - less_conservative and segment filtered on Full CpGs and ESR1
