@@ -1,6 +1,8 @@
 # Lifted 
-1. Lifted là công cụ
-2. mục đích của tool
+Compared to re-alignment approaches, liftover is a more rapid and costeffective solution. To further increase the accuracy of liftover and avoid misleading results, we implemented a three-step procedure to remove problematic regions (1) and ensure a more robust conversion between reference genome assemblies.
+
+Lifted là công cụ
+mục đích của tool
 
 
 
