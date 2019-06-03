@@ -19,7 +19,7 @@ awk '{print $1"\t"$2"\t"$3"\t"$4}' $bedpath| sort -k1,1 -k2,2n  >temp0
 bedtools subtract -a temp0 -b data/gapped-in-hg19.bed|sort -k1,1 -k2,2n > temp001
 bedtools subtract -a temp001 -b data/gapped-in-both.bed|sort -k1,1 -k2,2n > temp002
 bedtools subtract -a temp002 -b data/blacklist.hg19.bed|sort -k1,1 -k2,2n > temp1
-rm temp*
+rm temp0*
 
 ## liftover
 liftOver temp1 chainfile temp2 $outputunmap
