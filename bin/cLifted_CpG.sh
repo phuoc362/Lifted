@@ -11,7 +11,7 @@ bedpath=$1
 chainfile=$2
 outputmap=$3
 outputunmap=$4
-
+rm temp*
 # format bed file with 4 column:  chromosome_start_end_value
 awk '{print $1"\t"$2"\t"$3"\t"$4}' $bedpath| sort -k1,1 -k2,2n  >temp0
 
