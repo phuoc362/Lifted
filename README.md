@@ -33,7 +33,7 @@ Compared to re-alignment approaches, liftover is a more rapid and cost-effective
 
 #### Figure 1. Explanation of gapped-in-hg19, gapped-in-both, gapped-in-hg38 and ungapped
 
-<img src="figures/Figure_2.png" height="160" width="340">
+<img src="figures/Figure_2.png" height="160" width="320">
 
 #### Figure 2. Intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split
 
