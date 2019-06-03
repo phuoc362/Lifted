@@ -27,7 +27,7 @@ liftOver temp $chainfile temp2 $outputunmap
 
 ### filter gap in hg38, not cg, duplicates
 sort -k1,1 -k2,2n temp2 > temp20
-cat Lifted/data/notCG.bed Lifted/data/gapped-in-hg38.bed Lifted/data/duplication.bed|sort -k1,1 -k2,2n > temp21
+cat Lifted/data/notCG.bed Lifted/data/gapped-in-hg38.bed Lifted/data/duplication.bed|sort -k1,1 -k2,2n|awk '{print $1"\t"$2"\t"$3}' > temp21
 bedtools intersect -a temp20 -b temp21 -v > temp3
 
 #### filter alt chr
