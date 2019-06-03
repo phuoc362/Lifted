@@ -3,61 +3,60 @@ Compared to re-alignment approaches, liftover is a more rapid and costeffective 
 
 Lifted gets inputs (BED files containing coordinates in hg19) and file chain (hg19ToHg38 from UCSC Genome Browser/NCBI) to generate BED files containing coordinates in hg38.
 
-Dependancies of Lifted:
+## Dependancies of Lifted:
 * UCSC liftOver
 * bedtools
 
-Three-step procedure of Lifted for WGBS:
-## cLifted_CpG (conservative Lifted)
+## Three-step procedure of Lifted for WGBS:
+### cLifted_CpG (conservative Lifted)
 * First, Lifted removes all the gapped regions that can cause corruption, including gapped-in-hg19, gapped-in-both (these regions are explained in Figure 1) and blacklist with bedtools.
 * Second, the remaining coordinates are all ungapped on hg19 and then are ready to be converted by UCSC liftOver.
 * Third, the inappropriate data such as duplication, alternative chromosome and not CG are removed. All output coordinates that overlap with gapped-in-hg38 are also removed by bedtools.
 
-## lLifted_CpG (less conservative Lifted)
+### lLifted_CpG (less conservative Lifted)
 * First, Lifted removes all the gapped regions that can cause corruption, including gapped-in-hg19, gapped-in-both, gapped-in-hg38 and blacklist with bedtools. For gapped-in-hg38, the input intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split before liftover to cut out 2bp as presented in Figure 2.
 * Second, the remaining coordinates are all ungapped on hg19 and then are ready to be converted by UCSC liftOver.
 * Third, the inappropriate data such as duplication, alternative chromosome and not CG are removed by bedtools.
 
-Three-step procedure of Lifted for ChIP-Seq:
-## cLifted_interval (conservative Lifted)
+## Three-step procedure of Lifted for ChIP-Seq:
+### cLifted_interval (conservative Lifted)
 * First, Lifted removes all the gapped regions that can cause corruption, including gapped-in-hg19, gapped-in-both (these regions are explained in Figure 1) and blacklist with bedtools.
 * Second, the remaining coordinates are all ungapped on hg19 and then are ready to be converted by UCSC liftOver.
 * Third, the inappropriate data such as duplication and alternative chromosome are removed. All output coordinates that overlap with gapped-in-hg38 are also removed by bedtools.
 
-## lLifted_interval (less conservative Lifted)
+### lLifted_interval (less conservative Lifted)
 * First, Lifted removes all the gapped regions that can cause corruption, including gapped-in-hg19, gapped-in-both, gapped-in-hg38 and blacklist with bedtools. For gapped-in-hg38, the input intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split before liftover to cut out 2bp as presented in Figure 2.
 * Second, the remaining coordinates are all ungapped on hg19 and then are ready to be converted by UCSC liftOver.
 * Third, the inappropriate data such as duplication and alternative chromosome are removed by bedtools.
 
-#### The coordination of gapped-in-hg19, gapped-in-both, gap in hg38 and ungap
 ![vidu2](figures/Figure_1.png)
+#### Figure 1. Explanation of gapped-in-hg19, gapped-in-both, gapped-in-hg38 and ungapped
 
-#### Intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split
 ![vidu1](figures/Figure_2.png)
+#### Figure 2. Intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-### require input data:
-Data input must have fomat: chromosome, start, end, value
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-### require for run this tool:
-* Download and install  liftOver tool from UCSC:  http://hgdownload.soe.ucsc.edu/admin/exe/
+### Requirement of inputs:
+* Input BED files must have format: chromosome, start, end
 * Download chain file http://hgdownload.soe.ucsc.edu/goldenPath/hg19/liftOver/
-* Download template:  hg19.between2un-gapped.bed; hg19.bgap.tgap.and.blacklist.bed; remove.bed(only for CpGs)
-# install liftOver UCSC
-make path to liftOver tool:
-export PATH=$PATH:/path/to/file/liftOvertool/
 
-## Manual
-### for CPGs samples use conservative filtered:
-sh liftedCpGs.lifted.conservative.sh sh____inputfile____output.liffted.name.file____output.unlifted.name.file 
+
+### Requirement for run this tool:
+* Download and install liftOver tool from UCSC: http://hgdownload.soe.ucsc.edu/admin/exe/. UCSC liftOver tool needs to be exported:
+export PATH=$PATH:/path/to/file/liftOvertool/
+* Coordinates of filtered regions/positions are available at data folder (gapped-in-hg19.bed, gapped-in-both.bed, gapped-in-hg38.bed, duplication.bed and notCG.bed).
+
+
+
+## Command to run Lifted
+### cLifted_CpG:
+sh cLifted_CpG.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
 ### another samples use conservative filtered:
-sh lifted.lifted.conservative.sh.sh____inputfile____output.liffted.name.file____output.unlifted.name.file 
+sh lLifted_CpG.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
 ### for CPGs samples use less_conservative filtered:
-sh liftedCpGs.lifted.less_conservative.sh sh____inputfile____output.liffted.name.file____output.unlifted.name.file
+sh cLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
 ### for CPGs samples use less_conservative filtered:
-sh liftedCpGs.lifted.less_conservative.sh sh____inputfile____output.liffted.name.file____output.unlifted.name.file
+sh lLifted_interval.sh chain_file input.bed output.lifted.bed output.unlifted.bed
 
 ### Exsample compare filter results on ESR1(chipseq) and full CPGs(WGBS)
 
