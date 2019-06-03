@@ -4,32 +4,32 @@
 ########################    CpGs conservative  #############################################
 ################################################################################
 ################################################################################
-#### required  hg19.bgap.tgap.and.blacklist.bed file
-#### required remove.notcg.bed; hg19.between2un-gapped.bed files
-#### required hg19ToHg38.over.chain file
+#### bedtools
 #### required liftOver tools
-
 ### input
 bedpath=$1
-outputmap=$2
-outputunmap=$3
+chainfile=$2
+outputmap=$3
+outputunmap=$4
 
 # format bed file with 4 column:  chromosome_start_end_value
 awk '{print $1"\t"$2"\t"$3"\t"$4}' $bedpath| sort -k1,1 -k2,2n  >temp0
 
 # filtered blacklist and gap(gapped-in-hg19, gapped-in-both and blacklist)
-bedtools subtract -a temp0 -b hg19.bgap.tgap.and.blacklist.bed > temp
-
-## liftover
-liftOver temp hg19ToHg38.over.chain temp1 $outputunmap
-
-### filter gap in hg38, not cg, duplicates
-sort -k1,1 -k2,2n temp1 > temp01
-cat remove.notcg.bed hg19.between2un-gapped.bed|sort -k1,1 -k2,2n > temp02
-bedtools intersect -a temp01 -b temp02 -v > temp2
-
-#### filter alt chr
-sort -k1,1 -k2,2n temp2|grep -E "chr(.|..)[[:blank:]]"|sort -k1,1 -k2,2n > $outputmap
-
+bedtools subtract -a temp0 -b gapped-in-hg19.bed|sort -k1,1 -k2,2n > temp001
+bedtools subtract -a temp001 -b gapped-in-both.bed|sort -k1,1 -k2,2n > temp002
+bedtools subtract -a temp002 -b blacklist.hg19.bed|sort -k1,1 -k2,2n > temp1
 rm temp*
 
+## liftover
+liftOver temp1 chainfile temp2 $outputunmap
+
+### filter gap in hg38, not cg, duplicates
+sort -k1,1 -k2,2n temp2 > temp2.0
+cat notCG.bed gapped-in-hg38.bed duplication.bed|sort -k1,1 -k2,2n > temp2.1
+bedtools intersect -a temp2.0 -b temp2.1 -v > temp3
+
+#### filter alt chr
+sort -k1,1 -k2,2n temp3|grep -E "chr(.|..)[[:blank:]]"|sort -k1,1 -k2,2n > $outputmap
+
+rm temp*
