@@ -1,5 +1,5 @@
 ################################################################################
-########################    Chipseq   #############################################
+########################    Chipseq  less conservative #############################################
 ################################################################################
 ################################################################################
 #### required  hg19.bgap.tgap.and.blacklist.bed file
@@ -7,14 +7,10 @@
 #### required hg19ToHg38.over.chain file
 #### required liftOver tools
 
-
-
 ### input
 bedpath=$1
 outputmap=$2
 outputunmap=$3
-
-
 
 # format bed file with 4 column: chromosome_start_end_value
 awk '{print $1"\t"$2"\t"$3"\t"$4"\t"$1"."$2"."$3}' $bedpath| sort -k1,1 -k2,2n  >temp0
