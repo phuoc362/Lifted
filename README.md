@@ -1,18 +1,34 @@
 # Lifted 
-Compared to re-alignment approaches, liftover is a more rapid and costeffective solution. To further increase the accuracy of liftover and avoid misleading results, we implemented a three-step procedure to remove problematic regions (1) and ensure a more robust conversion between reference genome assemblies.
+Compared to re-alignment approaches, liftover is a more rapid and costeffective solution. To further increase the accuracy of liftover epigenome (WGBS and ChIP-Seq) and avoid misleading results, we implemented a three-step procedure to remove problematic regions (1) and ensure a more robust conversion between reference genome assemblies, namely, Lifted.
 
-Lifted là công cụ
-mục đích của tool
+Lifted gets inputs (BED files containing coordinates in hg19) and file chain (hg19ToHg38 from UCSC Genome Browser/NCBI) to generate BED files containing coordinates in hg38.
 
+Dependancies of Lifted:
+* UCSC liftOver
+* bedtools
 
+Three-step procedure of Lifted for WGBS:
+## cLifted_CpG (conservative Lifted)
+* First, Lifted removes all the gapped regions that can cause corruption, including gapped-in-hg19, gapped-in-both (these regions are explained in Figure 1) and blacklist with bedtools.
+* Second, the remaining coordinates are all ungapped on hg19 and then are ready to be converted by UCSC liftOver.
+* Third, the inappropriate data such as duplication, alternative chromosome and not CG are removed. All output coordinates that overlap with gapped-in-hg38 are also removed by bedtools.
 
-3. giải thích:
-3.1 giải thích thuật toán less_
-3.2 giải thích thuật toán conservative
+## lLifted_CpG (less conservative Lifted)
+* First, Lifted removes all the gapped regions that can cause corruption, including gapped-in-hg19, gapped-in-both, gapped-in-hg38 and blacklist with bedtools. For gapped-in-hg38, the input intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split before liftover to cut out 2bp as presented in Figure 2.
+* Second, the remaining coordinates are all ungapped on hg19 and then are ready to be converted by UCSC liftOver.
+* Third, the inappropriate data such as duplication, alternative chromosome and not CG are removed by bedtools.
 
-We have implemented a guideline to improve the result of conversion of epigenome sequencing data, namely, Lifted. From the enrichment analyses described in previous sections, all the gapped regions that can cause corruption were gathered to build three annotation files, namely, gapped-in-hg19, gapped-in-both and gapped-in-hg38. To liftover from hg19 to hg38, first, we filter the input coordinates by gapped-in-hg19, gapped-in-both and blacklist. The remaining coordinates are all ungapped on hg19, so the liftover can be safely performed at this stage. 
-Here we propose two options to remove gapped-in-hg38. The first option is conservative where all output intervals that overlap with gapped-in-hg38 are excluded after liftover. This ensures that only the input data situated in the ungapped regions will be converted and the users can then maximize output quality. However this approach will result in a reduction of the number of converted data but the output will be of high quality. The second option is less conservative, whereby the input intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split before liftover to cut out 2bp in a similar manner to how the data were simulated in picture. This approach can preserve the number of convertible intervals, however the quality of conversion may not be as high and will contain false positive. The users should consider the advantages and disadvantages of each option to choose the appropriate one for their purposes. In both approaches, the inappropriate data such as duplication, alternative chromosome, not CG is filtered.
-### * Figures explain:
+Three-step procedure of Lifted for ChIP-Seq:
+## cLifted_interval (conservative Lifted)
+* First, Lifted removes all the gapped regions that can cause corruption, including gapped-in-hg19, gapped-in-both (these regions are explained in Figure 1) and blacklist with bedtools.
+* Second, the remaining coordinates are all ungapped on hg19 and then are ready to be converted by UCSC liftOver.
+* Third, the inappropriate data such as duplication and alternative chromosome are removed. All output coordinates that overlap with gapped-in-hg38 are also removed by bedtools.
+
+## lLifted_interval (less conservative Lifted)
+* First, Lifted removes all the gapped regions that can cause corruption, including gapped-in-hg19, gapped-in-both, gapped-in-hg38 and blacklist with bedtools. For gapped-in-hg38, the input intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split before liftover to cut out 2bp as presented in Figure 2.
+* Second, the remaining coordinates are all ungapped on hg19 and then are ready to be converted by UCSC liftOver.
+* Third, the inappropriate data such as duplication and alternative chromosome are removed by bedtools.
+
 #### The coordination of gapped-in-hg19, gapped-in-both, gap in hg38 and ungap
 ![vidu2](https://user-images.githubusercontent.com/19143879/58646612-fc3bf480-832f-11e9-8a8f-442efc97c3f7.png)
 
