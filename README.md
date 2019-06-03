@@ -37,11 +37,12 @@ Compared to re-alignment approaches, liftover is a more rapid and cost-effective
 
 #### Figure 2. Intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split
 
-### Requirement of inputs:
+## Requirements
+### Requirements of inputs:
 * Input BED files must have format: chromosome, start, end.
 * Download chain file http://hgdownload.soe.ucsc.edu/goldenPath/hg19/liftOver/
 
-### Requirement of dependencies:
+### Requirements of dependencies:
 * Download and install *UCSC liftOver* from http://hgdownload.soe.ucsc.edu/admin/exe/. *UCSC liftOver* needs to be exported:
 export PATH=$PATH:/path/to/file/liftOvertool/
 * Download and install *bedtools* from https://bedtools.readthedocs.io/en/latest/
@@ -57,6 +58,7 @@ sh cLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unli
 ### Less conservative *Lifted* for ChIP-Seq:
 sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
 
+## Examples
 ### Examples of comparing lifted (*cLifted* and *lLifted*) with *UCSC liftOver*, *segment_liftover* on ESR1 (ChIP-Seq) and full CPGs (WGBS)
 
 
