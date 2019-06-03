@@ -1,5 +1,5 @@
 # Lifted 
-Compared to re-alignment approaches, liftover is a more rapid and costeffective solution. To further increase the accuracy of liftover epigenome (WGBS and ChIP-Seq) and avoid misleading results, we implemented a three-step procedure to remove problematic regions (1) and ensure a more robust conversion between reference genome assemblies, namely, Lifted.
+Compared to re-alignment approaches, liftover is a more rapid and costeffective solution. To further increase the accuracy of liftover epigenome (WGBS and ChIP-Seq) and avoid misleading results, we implemented a three-step procedure to remove problematic regions (Figure 1) and ensure a more robust conversion between reference genome assemblies, namely, Lifted.
 
 Lifted gets inputs (BED files containing coordinates in hg19) and file chain (hg19ToHg38 from UCSC Genome Browser/NCBI) to generate BED files containing coordinates in hg38.
 
