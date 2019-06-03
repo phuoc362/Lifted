@@ -28,7 +28,7 @@ bedtools intersect -a temp20 -b Lifted/data/gapped-in-hg38.bed -v > temp3
 
 #### filter  duplicate, alt chromosome
 sort -k1,1 -k2,2n temp3|grep -E "chr(.|..)[[:blank:]]"|sort -k5,5|uniq -f4 -u|sort -k1,1 -k2,2n > temp31
-bedtools merge -i  temp3.1 -c 5 -o collapse -delim "_" > temp32
+bedtools merge -i  temp31 -c 5 -o collapse -delim "_" > temp32
 awk '{if($5!~"_"){print $0}}' temp3.2|sort -k1,1 -k2,2n > $outputmap
 
 rm temp*
