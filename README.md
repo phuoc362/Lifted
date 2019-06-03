@@ -3,7 +3,7 @@ Compared to re-alignment approaches, liftover is a more rapid and cost-effective
 
 *Lifted* gets inputs (BED files containing coordinates in hg19) and file chain (hg19ToHg38 from UCSC Genome Browser/NCBI) to generate BED files containing coordinates in hg38.
 
-## Dependancies of *Lifted*:
+## Dependencies of *Lifted*:
 * *UCSC liftOver*
 * *bedtools*
 
