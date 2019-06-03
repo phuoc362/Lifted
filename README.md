@@ -25,7 +25,7 @@ Compared to re-alignment approaches, liftover is a more rapid and cost-effective
 * Third, the inappropriate data such as duplication and alternative chromosome are removed. All output coordinates that overlap with gapped-in-hg38 are also removed by *bedtools*.
 
 ### *lLifted_interval* (less conservative *Lifted*)
-* First, *Lifted* removes all the gapped regions that cause corruption, including gapped-in-hg19, gapped-in-both, gapped-in-hg38 and blacklist with bedtools. For gapped-in-hg38, the input intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split before liftover to cut out 2bp as presented in Figure 2.
+* First, *Lifted* removes all the gapped regions that cause corruption, including gapped-in-hg19, gapped-in-both, gapped-in-hg38 and blacklist with *bedtools*. For gapped-in-hg38, the input intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split before liftover to cut out 2bp as presented in Figure 2.
 * Second, the remaining coordinates are all ungapped on hg19 and then are ready to be converted by *UCSC liftOver*.
 * Third, the inappropriate data such as duplication and alternative chromosome are removed by *bedtools*.
 
@@ -42,7 +42,7 @@ Compared to re-alignment approaches, liftover is a more rapid and cost-effective
 * Download chain file http://hgdownload.soe.ucsc.edu/goldenPath/hg19/liftOver/
 
 ### Requirement of dependencies:
-* Download and install *UCSC liftOver* from http://hgdownload.soe.ucsc.edu/admin/exe/. *UCSC liftOver* tool needs to be exported:
+* Download and install *UCSC liftOver* from http://hgdownload.soe.ucsc.edu/admin/exe/. *UCSC liftOver* needs to be exported:
 export PATH=$PATH:/path/to/file/liftOvertool/
 * Download and install *bedtools* from https://bedtools.readthedocs.io/en/latest/
 * Coordinates of filtered regions/positions are available at data folder (gapped-in-hg19.bed, gapped-in-both.bed, gapped-in-hg38.bed, duplication.bed and notCG.bed).
