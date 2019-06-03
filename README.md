@@ -46,7 +46,7 @@ Compared to re-alignment approaches, liftover is a more rapid and cost-effective
 * Download and install *UCSC liftOver* from http://hgdownload.soe.ucsc.edu/admin/exe/. *UCSC liftOver* needs to be exported:
 export PATH=$PATH:/path/to/file/liftOvertool/
 * Download and install *bedtools* from https://bedtools.readthedocs.io/en/latest/
-* Coordinates of filtered regions/positions are available at data folder (gapped-in-hg19.bed, gapped-in-both.bed, gapped-in-hg38.bed, duplication.bed and notCG.bed).
+* Coordinates of filtered regions/positions are available at data folder (gapped-in-hg19.bed, gapped-in-both.bed, gapped-in-hg38.bed, duplication.bed, blacklist.hg19.bed and notCG.bed).
 
 ## Command to run *Lifted*
 ### Conservative *Lifted* for WGBS:
