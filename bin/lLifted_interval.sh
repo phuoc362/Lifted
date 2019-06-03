@@ -25,7 +25,7 @@ sort -k1,1 -k2,2n temp > temp01
 bedtools subtract -a temp01 -b Lifted/data/hg19.gapped-in-hg38.bed  > temp2
 
 ## liftover
-liftOver temp2 chainfile temp3 $outputunmap
+liftOver temp2 $chainfile temp3 $outputunmap
 
 #### filter  duplicate, alt chromosome
 sort -k1,1 -k2,2n temp3|grep -E "chr(.|..)[[:blank:]]"|sort -k5,5|uniq -f4 -u|sort -k1,1 -k2,2n > temp002
