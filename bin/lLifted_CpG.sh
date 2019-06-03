@@ -23,7 +23,7 @@ bedtools subtract -a temp002 -b Lifted/data/gapped-in-both.bed|sort -k1,1 -k2,2n
 bedtools subtract -a temp003 -b Lifted/data/blacklist.hg19.bed|sort -k1,1 -k2,2n > temp
 rm temp0*
 ## liftover
-liftOver temp chainfile temp2 $outputunmap
+liftOver temp $chainfile temp2 $outputunmap
 
 ### filter gap in hg38, not cg, duplicates
 sort -k1,1 -k2,2n temp2 > temp20
