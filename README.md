@@ -35,18 +35,15 @@ Lifted gets inputs (BED files containing coordinates in hg19) and file chain (hg
 ![vidu1](figures/Figure_2.png)
 #### Figure 2. Intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split
 
-
 ### Requirement of inputs:
 * Input BED files must have format: chromosome, start, end
 * Download chain file http://hgdownload.soe.ucsc.edu/goldenPath/hg19/liftOver/
 
-
-### Requirement for run this tool:
-* Download and install liftOver tool from UCSC: http://hgdownload.soe.ucsc.edu/admin/exe/. UCSC liftOver tool needs to be exported:
+### Requirement of dependencies:
+* Download and install *UCSC liftOver* from http://hgdownload.soe.ucsc.edu/admin/exe/. *UCSC liftOver* tool needs to be exported:
 export PATH=$PATH:/path/to/file/liftOvertool/
+* Download and install *bedtools* from https://bedtools.readthedocs.io/en/latest/
 * Coordinates of filtered regions/positions are available at data folder (gapped-in-hg19.bed, gapped-in-both.bed, gapped-in-hg38.bed, duplication.bed and notCG.bed).
-
-
 
 ## Command to run Lifted
 ### Conservative Lifted for WGBS:
