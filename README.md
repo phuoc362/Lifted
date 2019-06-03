@@ -32,7 +32,7 @@ Lifted gets inputs (BED files containing coordinates in hg19) and file chain (hg
 ![vidu2](figures/Figure_1.png)
 #### Figure 1. Explanation of gapped-in-hg19, gapped-in-both, gapped-in-hg38 and ungapped
 
-![vidu1](figures/Figure_2.png)
+<img src="figures/Figure_2.png" height="160" width="330">
 #### Figure 2. Intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split
 
 ### Requirement of inputs:
@@ -43,7 +43,7 @@ Lifted gets inputs (BED files containing coordinates in hg19) and file chain (hg
 * Download and install *UCSC liftOver* from http://hgdownload.soe.ucsc.edu/admin/exe/. *UCSC liftOver* tool needs to be exported:
 export PATH=$PATH:/path/to/file/liftOvertool/
 * Download and install *bedtools* from https://bedtools.readthedocs.io/en/latest/
-* Coordinates of filtered regions/positions are available at data folder (gapped-in-hg19.bed, gapped-in-both.bed, gapped-in-hg38.bed, duplication.bed, blacklist.hg19.bed and notCG.bed).
+* Coordinates of filtered regions/positions are available at data folder (gapped-in-hg19.bed, gapped-in-both.bed, gapped-in-hg38.bed, duplication.bed and notCG.bed).
 
 ## Command to run Lifted
 ### Conservative *Lifted* for WGBS:
