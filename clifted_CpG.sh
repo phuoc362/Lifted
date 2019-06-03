@@ -33,21 +33,3 @@ sort -k1,1 -k2,2n temp2|grep -E "chr(.|..)[[:blank:]]"|sort -k1,1 -k2,2n > $outp
 
 rm temp*
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
