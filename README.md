@@ -30,10 +30,10 @@ Three-step procedure of Lifted for ChIP-Seq:
 * Third, the inappropriate data such as duplication and alternative chromosome are removed by bedtools.
 
 #### The coordination of gapped-in-hg19, gapped-in-both, gap in hg38 and ungap
-![vidu2](https://user-images.githubusercontent.com/19143879/58646612-fc3bf480-832f-11e9-8a8f-442efc97c3f7.png)
+![vidu2](figures/Figure_1.png)
 
 #### Intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split
-![vidu1](https://user-images.githubusercontent.com/19143879/58646622-ff36e500-832f-11e9-9af4-1af87843777c.png)
+![vidu1](figures/Figure_2.png)
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
