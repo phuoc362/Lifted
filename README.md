@@ -1,6 +1,10 @@
 # Lifted 
 Compared to re-alignment approaches, liftover is a more rapid and cost-effective solution. To further increase the accuracy of liftover epigenome (WGBS and ChIP-Seq) and avoid misleading results, we implemented a three-step procedure to remove problematic regions (Figure 1) and ensure a more robust conversion between reference genome assemblies, namely, *Lifted*.
 
+![vidu2](figures/Figure_1.png)
+
+#### Figure 1. Explanation of gapped-in-hg19, gapped-in-both, gapped-in-hg38 and ungapped
+
 *Lifted* gets inputs (BED files containing coordinates in hg19) and chain file (hg19ToHg38 from UCSC Genome Browser/NCBI) to generate BED files containing coordinates in hg38.
 
 ## Dependencies of *Lifted*:
@@ -24,18 +28,22 @@ Compared to re-alignment approaches, liftover is a more rapid and cost-effective
 * Second, the remaining coordinates are all ungapped on hg19 and then are ready to be converted by *UCSC liftOver*.
 * Third, the inappropriate data such as duplication and alternative chromosome are removed. All output coordinates that overlap with gapped-in-hg38 are also removed by *bedtools*.
 
+<img src="figures/cLifted.PNG" height="250">
+
+#### Figure 2. Explanation of *cLifted*
+
 ### *lLifted_interval* (less conservative *Lifted*)
 * First, *Lifted* removes all the gapped regions that cause corruption, including gapped-in-hg19, gapped-in-both, gapped-in-hg38 and blacklist with *bedtools*. For gapped-in-hg38, the input intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split before liftover to cut out 2bp as presented in Figure 2.
 * Second, the remaining coordinates are all ungapped on hg19 and then are ready to be converted by *UCSC liftOver*.
 * Third, the inappropriate data such as duplication and alternative chromosome are removed by *bedtools*.
 
-![vidu2](figures/Figure_1.png)
+<img src="figures/Figure_2.png" height="160">
 
-#### Figure 1. Explanation of gapped-in-hg19, gapped-in-both, gapped-in-hg38 and ungapped
+#### Figure 3. Intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split
 
-<img src="figures/Figure_2.png" height="160" width="340">
+<img src="figures/lLifted.PNG" height="250">
 
-#### Figure 2. Intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split
+#### Figure 4. Explanation of *lLifted*
 
 ## Requirements
 ### Requirements of inputs:
