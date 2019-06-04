@@ -64,6 +64,8 @@ sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unli
 
 #### Figure 3. Number CpGs/intervals results of comparison between the four outputs using *cLifted*, *lLifted*, *segment_liftover* and *UCSC liftOver*
 
+
+
 <img src="figures/figure4.png" height="360" width="540">
 
 #### Figure 4. Jaccard statistic and Pearson correlation coefficients of intervals lengt between the four outputs using *cLifted*, *lLifted*, *segment_liftover* and *UCSC liftOver*
