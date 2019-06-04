@@ -61,6 +61,15 @@ sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unli
 ## Examples 1: On Full CpGs (WGBS) 
 <img src="figures/figure3.1.png" height="360" width="540">
 
+sh Lifted/bin/lLifted_interval.sh hg19.fullCpGs.bedGraph  hg19ToHg38.over.chain lo19to38.fullCpGs.lLifted.bedGraph  e.l.unmap
+
+sh Lifted/bin/cLifted_interval.sh hg19.fullCpGs.bedGraph  hg19ToHg38.over.chain lo19to38.fullCpGs.cLifted.bedGraph  e.c.unmap
+
+liftOver hg19.fullCpGs.bedGraph link/to/file/hg19ToHg38.over.chain  lo19to38.FullCpGs.ucsc.bedGraph unlo19to38.bedGraph
+
+segment_liftover -l link/to/liftOver -i input/folder/ -o output/folder/ -c link/to/hg19ToHg38.over.chain -si hg19.fullCpGs.bedGraph -so lo19to38.fullCpGs.segment.bedGraph
+
+
 ### Figure 3. Comparison of *Lifted* (*cLifted* and *lLifted*) and *UCSC liftOver*, *segment_liftover*
 
 
