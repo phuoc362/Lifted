@@ -58,9 +58,11 @@ sh cLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unli
 ### Less conservative *Lifted* for ChIP-Seq:
 sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
 
-## Examples
-### Comparison of *Lifted* (*cLifted* and *lLifted*) and *UCSC liftOver*, *segment_liftover* on ESR1 (ChIP-Seq) and full CPGs (WGBS)
+## Examples 1: On Full CpGs (WGBS) 
 <img src="figures/figure3.1.png" height="360" width="540">
+
+### Figure 3. Comparison of *Lifted* (*cLifted* and *lLifted*) and *UCSC liftOver*, *segment_liftover*
+
 
 #### Figure 3. Number CpGs/intervals results of comparison between the four outputs using *cLifted*, *lLifted*, *segment_liftover* and *UCSC liftOver*
 
