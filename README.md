@@ -59,15 +59,34 @@ sh cLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unli
 sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
 
 ## Examples 1: On Full CpGs (WGBS) 
-<img src="figures/figure3.1.png" height="360" width="540">
+sh Lifted/bin/lLifted_CpG.sh hg19.fullCpGs.bedGraph  hg19ToHg38.over.chain lo19to38.fullCpGs.lLifted.bedGraph  e.l.unmap
 
-sh Lifted/bin/lLifted_interval.sh hg19.fullCpGs.bedGraph  hg19ToHg38.over.chain lo19to38.fullCpGs.lLifted.bedGraph  e.l.unmap
-
-sh Lifted/bin/cLifted_interval.sh hg19.fullCpGs.bedGraph  hg19ToHg38.over.chain lo19to38.fullCpGs.cLifted.bedGraph  e.c.unmap
+sh Lifted/bin/cLifted_CpG.sh hg19.fullCpGs.bedGraph  hg19ToHg38.over.chain lo19to38.fullCpGs.cLifted.bedGraph  e.c.unmap
 
 liftOver hg19.fullCpGs.bedGraph link/to/file/hg19ToHg38.over.chain  lo19to38.FullCpGs.ucsc.bedGraph unlo19to38.bedGraph
 
 segment_liftover -l link/to/liftOver -i input/folder/ -o output/folder/ -c link/to/hg19ToHg38.over.chain -si hg19.fullCpGs.bedGraph -so lo19to38.fullCpGs.segment.bedGraph
+
+<img src="figures/figure3.1.png" height="360" width="540">
+
+## Examples 2: On ESR1 (ChIPSeq) 
+sh Lifted/bin/lLifted_interval.sh ESR1.hg19ID.bedGraph  hg19ToHg38.over.chain ESR1.lo19to38.lLifted.bedGraph  e.l.unmap
+
+sh Lifted/bin/cLifted_interval.sh ESR1.hg19ID.bedGraph  hg19ToHg38.over.chain ESR1.lo19to38.cLifted.bedGraph  e.c.unmap
+
+liftOver  ESR1.hg19ID.bedGraph link/to/file/hg19ToHg38.over.chain  ESR1.lo19to38.ucsc.bedGraph unlo19to38.ESR1.bedGraph
+
+segment_liftover -l link/to/liftOver -i input/folder/ -o output/folder/ -c link/to/hg19ToHg38.over.chain -si  ESR1.hg19ID.bedGraph -so ESR1.lo19to38.segment.bedGraph
+
+<img src="figures/figure3.1.png" height="360" width="540">
+
+
+
+
+
+
+
+
 
 
 ### Figure 3. Comparison of *Lifted* (*cLifted* and *lLifted*) and *UCSC liftOver*, *segment_liftover*
