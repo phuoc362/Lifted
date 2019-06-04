@@ -83,7 +83,9 @@ sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unli
 *segment_liftover -l link/to/liftOver -i input/folder/ -o output/folder/ -c link/to/hg19ToHg38.over.chain -si  ESR1.hg19ID.bedGraph -so ESR1.lo19to38.segment.bedGraph*
 
 <img src="figures/Figure4.chip.png" height="360" width="540">
+
 #### Figure 4. Comparison of *Lifted* (*cLifted* and *lLifted*) and *UCSC liftOver*, *segment_liftover* On ESR1 (ChIPSeq)
 
 <img src="figures/Figure5.png" height="360" width="540">
+
 #### Figure 5. Jaccard statistic and Pearson correlation coefficients of intervals lengt between the four outputs using *cLifted*, *lLifted*, *segment_liftover* and *UCSC liftOver*
