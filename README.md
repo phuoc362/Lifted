@@ -1,7 +1,7 @@
 # Lifted 
 Compared to re-alignment approaches, liftover is a more rapid and cost-effective solution. To further increase the accuracy of liftover epigenome (WGBS and ChIP-Seq) and avoid misleading results, we implemented a three-step procedure to remove problematic regions (Figure 1) and ensure a more robust conversion between reference genome assemblies, namely, *Lifted*.
 
-![vidu2](figures/Figure_1.png)
+<img src="figures/Figure_1.png" height="200">
 
 #### Figure 1. Explanation of gapped-in-hg19, gapped-in-both, gapped-in-hg38 and ungapped
 
@@ -37,7 +37,7 @@ Compared to re-alignment approaches, liftover is a more rapid and cost-effective
 * Second, the remaining coordinates are all ungapped on hg19 and then are ready to be converted by *UCSC liftOver*.
 * Third, the inappropriate data such as duplication and alternative chromosome are removed by *bedtools*.
 
-<img src="figures/Figure_2.png" height="160">
+<img src="figures/Figure_2.png" height="140">
 
 #### Figure 3. Intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split
 
