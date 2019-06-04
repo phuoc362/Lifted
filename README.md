@@ -30,7 +30,7 @@ Compared to re-alignment approaches, liftover is a more rapid and cost-effective
 
 <img src="figures/cLifted.PNG" height="250">
 
-#### Figure 2. Explanation of *cLifted*
+#### Figure 2. Two scenarios of liftover with *cLifted* (1) interval does not cross gapped-in-hg38, (2) interval crosses gapped-in-hg38.
 
 ### *lLifted_interval* (less conservative *Lifted*)
 * First, *Lifted* removes all the gapped regions that cause corruption, including gapped-in-hg19, gapped-in-both, gapped-in-hg38 and blacklist with *bedtools*. For gapped-in-hg38, the input intervals in hg19 that overlap the coordinates of gapped-in-hg38 are split before liftover to cut out 2bp as presented in Figure 2.
@@ -43,7 +43,7 @@ Compared to re-alignment approaches, liftover is a more rapid and cost-effective
 
 <img src="figures/lLifted.PNG" height="250">
 
-#### Figure 4. Explanation of *lLifted*
+#### Figure 4. Two scenarios of liftover with *lLifted* (1) interval does not cross gapped-in-hg38, (2) interval crosses gapped-in-hg38.
 
 ## Requirements
 ### Requirements of inputs:
