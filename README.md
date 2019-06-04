@@ -62,3 +62,4 @@ sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unli
 ### Comparison of *Lifted* (*cLifted* and *lLifted*) and *UCSC liftOver*, *segment_liftover* on ESR1 (ChIP-Seq) and full CPGs (WGBS)
 <img src="figures/Figure3.png" height="360" width="540">
 <img src="figures/Figure4.png" height="360" width="540">
+
