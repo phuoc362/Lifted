@@ -15,10 +15,10 @@ rm temp*
 awk '{print $1"\t"$2"\t"$3"\t"$4"\t"$1"."$2"."$3}' $bedpath| sort -k1,1 -k2,2n  >temp0
 
 # filtered blacklist and gap(gapped-in-hg19,hg19 overlap gap in hg38, gapped-in-both and blacklist)
-bedtools subtract -a temp0 -b Lifted/data/gapped-in-hg19.bed|sort -k1,1 -k2,2n > temp001
-bedtools subtract -a temp001 -b Lifted/data/hg19-overlap-gapped-in-hg38.bed|sort -k1,1 -k2,2n > temp002
-bedtools subtract -a temp002 -b Lifted/data/gapped-in-both.bed|sort -k1,1 -k2,2n > temp003
-bedtools subtract -a temp003 -b Lifted/data/blacklist.hg19.bed|sort -k1,1 -k2,2n > temp1
+bedtools subtract -a temp0 -b Lifted/data/gapped-in-hg19.bed -A|sort -k1,1 -k2,2n > temp001
+bedtools subtract -a temp001 -b Lifted/data/hg19-overlap-gapped-in-hg38.bed -A|sort -k1,1 -k2,2n > temp002
+bedtools subtract -a temp002 -b Lifted/data/gapped-in-both.bed -A|sort -k1,1 -k2,2n > temp003
+bedtools subtract -a temp003 -b Lifted/data/blacklist.hg19.bed -A|sort -k1,1 -k2,2n > temp1
 rm temp0*
 
 ### sort 
