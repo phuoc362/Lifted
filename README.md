@@ -66,7 +66,7 @@ sh cLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unli
 ### Less conservative *Lifted* for ChIP-Seq:
 sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
 
-## Examples 1: On Full CpGs (WGBS) 
+## Example 1: On Full CpGs (WGBS) 
 
 *sh Lifted/bin/lLifted_CpG.sh hg19.fullCpGs.bedGraph  hg19ToHg38.over.chain lo19to38.fullCpGs.lLifted.bedGraph  e.l.unmap*
 
@@ -80,7 +80,7 @@ sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unli
 
 #### Figure 5. Comparison of *Lifted* (*cLifted* and *lLifted*) and *UCSC liftOver*, *segment_liftover* on Full CpGs (WGBS)
 
-## Examples 2: On ESR1 (ChIPSeq) 
+## Example 2: On ESR1 (ChIPSeq) 
 
 *sh Lifted/bin/lLifted_interval.sh ESR1.hg19ID.bedGraph  hg19ToHg38.over.chain ESR1.lo19to38.lLifted.bedGraph  e.l.unmap*
 
@@ -93,17 +93,7 @@ sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unli
 <img src="figures/Figure4.chip.png" height="360" width="540">
 
 #### Figure 6. Comparison of *Lifted* (*cLifted* and *lLifted*) and *UCSC liftOver*, *segment_liftover* On ESR1 (ChIPSeq)
-#
+
 <img src="figures/Figure5.png" height="360" width="540">
 
 #### Figure 6.1. Jaccard statistic and Pearson correlation coefficients of intervals lengt between the four outputs using *cLifted*, *lLifted*, *segment_liftover* and *UCSC liftOver* on ESR1
-#
-
-<img src="figures/Figure6.png" height="360" width="540">
-
-#### Figure 6.2. Jaccard statistic and Pearson correlation coefficients of intervals lengt between the four outputs using *cLifted*, *lLifted*, *segment_liftover* and *UCSC liftOver* on CHiPSeq
-*cLifted(correlation): 0.7572897;*                       *cLifted(jaccard): 0.8207695*;
-*lLifted(correlation): 0.7573762*;                      *lLifted(jaccard): 0.8211425*;
-*Segment(correlation): 0.7688202*;                       *Segment(jaccard): 0.8295640*;
-*UCSC(correlation): 0.5162132*;                          *UCSC(jaccard): 0.8226405*
-
