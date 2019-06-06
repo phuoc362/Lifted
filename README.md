@@ -96,5 +96,5 @@ sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unli
 
 <img src="figures/Figure6.png" height="360" width="540">
 
-#### Figure 6.1. Jaccard statistic and Pearson correlation coefficients of intervals lengt between the four outputs using *cLifted*, *lLifted*, *segment_liftover* and *UCSC liftOver* on ChIPSeq (366 s)
+#### Figure 6.1. Jaccard statistic and Pearson correlation coefficients of intervals lengt between the four outputs using *cLifted*, *lLifted*, *segment_liftover* and *UCSC liftOver* on ChIPSeq (366 samples)
 
