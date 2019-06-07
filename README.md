@@ -1,4 +1,4 @@
-# Lifted 
+# *Lifted* 
 Compared to re-alignment approaches, liftover is a more rapid and cost-effective solution. To further increase the accuracy of liftover epigenome (WGBS and ChIP-Seq) and avoid misleading results, we implemented a three-step procedure to remove problematic regions (Figure 1) and ensure a more robust conversion between reference genome assemblies, namely, *Lifted*.
 
 <img src="figures/Figure_1.png" height="200">
