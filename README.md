@@ -7,10 +7,6 @@ Compared to re-alignment approaches, liftover is a more rapid and cost-effective
 
 *Lifted* gets inputs (BED files containing coordinates in hg19) and chain file (hg19ToHg38 from UCSC Genome Browser/NCBI) to generate BED files containing coordinates in hg38.
 
-## Dependencies of *Lifted*:
-* *UCSC liftOver*
-* *bedtools*
-
 ## Three-step procedure of *Lifted* for WGBS:
 ### *cLifted_CpG* (conservative *Lifted*)
 * First, *Lifted* removes all the gapped regions that cause corruption, including gapped-in-hg19, gapped-in-both (these regions are explained in Figure 1) and blacklist with *bedtools*.
@@ -92,9 +88,9 @@ sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unli
 
 <img src="figures/figure5.png" height="360" width="540">
 
-#### Figure 6. Comparison of Lifted (cLifted and lLifted), UCSC liftOver and segment_liftover on a ESR1 ChIP-seq sample
+#### Figure 6. Comparison of *Lifted* (*cLifted* and *lLifted*), *UCSC liftOver* and *segment_liftover* on a ESR1 ChIP-seq sample
 
 <img src="figures/Figure6.png" height="360" width="540">
 
-#### Figure 7. Comparison of Lifted (cLifted and lLifted), UCSC liftOver and segment_liftover on 366 ChIP-seq (histone modifications and transcription factors) samples
+#### Figure 7. Comparison of *Lifted* (*cLifted* and *lLifted*), *UCSC liftOver* and *segment_liftover* on 366 ChIP-seq (histone modifications and transcription factors) samples
 
