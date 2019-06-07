@@ -3,7 +3,7 @@ Compared to re-alignment approaches, liftover is a more rapid and cost-effective
 
 <img src="figures/Figure_1.png" height="200">
 
-#### Figure 1.# Explanation of gapped-in-hg19, gapped-in-both, gapped-in-hg38 and ungapped
+#### Figure 1. Explanation of gapped-in-hg19, gapped-in-both, gapped-in-hg38 and ungapped
 
 *Lifted* gets inputs (BED files containing coordinates in hg19) and chain file (hg19ToHg38 from UCSC Genome Browser/NCBI) to generate BED files containing coordinates in hg38.
 
