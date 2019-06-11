@@ -86,6 +86,6 @@ sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unli
 
 *segment_liftover -l link/to/liftOver -i input/folder/ -o output/folder/ -c link/to/hg19ToHg38.over.chain -si  ESR1.hg19ID.bedGraph -so ESR1.lo19to38.segment.bedGraph*
 
-<img src="figures/figure4.1.cpgs.png" height="360" width="540">
+<img src="figures/figure4.1.ch.png" height="360" width="540">
 
 #### Figure 6. Comparison of *Lifted* (*cLifted* and *lLifted*), *UCSC liftOver* and *segment_liftover* on a ESR1 ChIP-seq sample
