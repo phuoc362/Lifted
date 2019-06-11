@@ -72,7 +72,7 @@ sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unli
 
 *segment_liftover -l link/to/liftOver -i input/folder/ -o output/folder/ -c link/to/hg19ToHg38.over.chain -si hg19.fullCpGs.bedGraph -so lo19to38.fullCpGs.segment.bedGraph*
 
-<img src="figures/figure3.cpgs.png" height="360" width="540">
+<img src="figures/figure3.1.cpgs.png" height="360" width="540">
 
 #### Figure 5. Comparison of *Lifted* (*cLifted* and *lLifted*) and *UCSC liftOver*, *segment_liftover* on Full CpGs (WGBS)
 
@@ -86,11 +86,6 @@ sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unli
 
 *segment_liftover -l link/to/liftOver -i input/folder/ -o output/folder/ -c link/to/hg19ToHg38.over.chain -si  ESR1.hg19ID.bedGraph -so ESR1.lo19to38.segment.bedGraph*
 
-<img src="figures/figure3.1.cpgs.png" height="360" width="540">
+<img src="figures/figure4.1.cpgs.png" height="360" width="540">
 
 #### Figure 6. Comparison of *Lifted* (*cLifted* and *lLifted*), *UCSC liftOver* and *segment_liftover* on a ESR1 ChIP-seq sample
-
-<img src="figures/figure4.1.chip.png" height="360" width="540">
-
-#### Figure 7. Comparison of *Lifted* (*cLifted* and *lLifted*), *UCSC liftOver* and *segment_liftover* on 366 ChIP-seq (histone modifications and transcription factors) samples
-
