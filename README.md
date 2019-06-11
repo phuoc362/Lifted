@@ -90,7 +90,7 @@ sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unli
 
 #### Figure 6. Comparison of *Lifted* (*cLifted* and *lLifted*), *UCSC liftOver* and *segment_liftover* on a ESR1 ChIP-seq sample
 
-<img src="figures/Figure6.png" height="360" width="540">
+<img src="figures/Figure6.1.png" height="360" width="540">
 
 #### Figure 7. Comparison of *Lifted* (*cLifted* and *lLifted*), *UCSC liftOver* and *segment_liftover* on 366 ChIP-seq (histone
 modifications and transcription factors) samples
