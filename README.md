@@ -41,7 +41,7 @@ Compared to re-alignment approaches, liftover is a more rapid and cost-effective
 
 #### Figure 4. Two scenarios of liftover with *lLifted* (1) interval does not cross gapped-in-hg38, (2) interval crosses gapped-in-hg38.
 
-## Requirements
+## Installation
 ### Requirements of inputs:
 * Input BED files must have format: chromosome, start, end.
 * Download chain file http://hgdownload.soe.ucsc.edu/goldenPath/hg19/liftOver/
@@ -52,7 +52,15 @@ export PATH=$PATH:/path/to/file/liftOvertool/
 * Download and install *bedtools* from https://bedtools.readthedocs.io/en/latest/
 * Coordinates of filtered regions/positions are available at data folder (gapped-in-hg19.bed, gapped-in-both.bed, gapped-in-hg38.bed, duplication.bed, blacklist.hg19.bed and notCG.bed).
 
+### Install *Lifted*
+* Clone our *Lifted* repository using:
+
+git clone https://github.com/phuoc362/Lifted.git
+
 ## Command to run *Lifted*
+Make sure the working directory is Lifted/bin
+
+cd Lifted/bin
 ### Conservative *Lifted* for WGBS:
 sh cLifted_CpG.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
 ### Less conservative *Lifted* for WGBS:
