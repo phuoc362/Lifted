@@ -53,9 +53,7 @@ export PATH=$PATH:/path/to/file/liftOvertool/
 * Coordinates of filtered regions/positions are available at data folder (gapped-in-hg19.bed, gapped-in-both.bed, gapped-in-hg38.bed, duplication.bed, blacklist.hg19.bed and notCG.bed).
 
 ### Install *Lifted*
-* Clone our *Lifted* repository using:
-
-git clone https://github.com/phuoc362/Lifted.git
+* Clone our *Lifted* repository using: git clone https://github.com/phuoc362/Lifted.git
 
 ## Command to run *Lifted*
 Make sure the working directory is Lifted/bin
