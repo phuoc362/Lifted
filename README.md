@@ -1,6 +1,10 @@
 # *Lifted* 
 Compared to re-alignment approaches, liftover is a more rapid and cost-effective solution. To further increase the accuracy of liftover epigenome (WGBS and ChIP-Seq) and avoid misleading results, we implemented a three-step procedure to remove problematic regions (Figure 1) and ensure a more robust conversion between reference genome assemblies, namely, *Lifted*.
 
+If you have used Lifted in a scientific publication, we would appreciate citations to the following paper:  
+Luu PL, Ong PT, Dinh TP, Clark SJ. Benchmark study comparing liftover tools for genome conversion of epigenome sequencing data. NAR Genomics and Bioinformatics. 2020 Sep;2(3):lqaa054.  
+[Read on NAR Genomics and Bioinformatics](https://doi.org/10.1093/nargab/lqaa054)
+
 <img src="figures/Figure_1.png" height="200">
 
 #### Figure 1. Explanation of gapped-in-hg19, gapped-in-both, gapped-in-hg38 and ungapped
