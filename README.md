@@ -61,40 +61,55 @@ export PATH=$PATH:/path/to/file/liftOvertool/
 ## Command to run *Lifted*
 Make sure the working directory is Lifted/bin
 
+```
 cd Lifted/bin
+```
 ### Conservative *Lifted* for WGBS:
+```
 sh cLifted_CpG.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
+```
 ### Less conservative *Lifted* for WGBS:
+```
 sh lLifted_CpG.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
+```
 ### Conservative *Lifted* for ChIP-Seq:
+```
 sh cLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
+```
 ### Less conservative *Lifted* for ChIP-Seq:
+```
 sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
+```
+
+The command can also be used for other interval data, such as DNA targeted sequencing panel.
+
+### Conservative *Lifted* for DNA targeted sequencing panel:
+```
+sh cLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
+```
+### Less conservative *Lifted* for DNA targeted sequencing panel:
+```
+sh lLifted_interval.sh <chain_file> <input.bed> <output.lifted.bed> <output.unlifted.bed>
+```
 
 ## Example 1: On Full CpGs (WGBS) 
-
-*sh Lifted/bin/lLifted_CpG.sh hg19.fullCpGs.bedGraph  hg19ToHg38.over.chain lo19to38.fullCpGs.lLifted.bedGraph  e.l.unmap*
-
-*sh Lifted/bin/cLifted_CpG.sh hg19.fullCpGs.bedGraph  hg19ToHg38.over.chain lo19to38.fullCpGs.cLifted.bedGraph  e.c.unmap*
-
-*liftOver hg19.fullCpGs.bedGraph link/to/file/hg19ToHg38.over.chain  lo19to38.FullCpGs.ucsc.bedGraph unlo19to38.bedGraph*
-
-*segment_liftover -l link/to/liftOver -i input/folder/ -o output/folder/ -c link/to/hg19ToHg38.over.chain -si hg19.fullCpGs.bedGraph -so lo19to38.fullCpGs.segment.bedGraph*
-
+```
+sh Lifted/bin/lLifted_CpG.sh hg19.fullCpGs.bedGraph  hg19ToHg38.over.chain lo19to38.fullCpGs.lLifted.bedGraph  e.l.unmap
+sh Lifted/bin/cLifted_CpG.sh hg19.fullCpGs.bedGraph  hg19ToHg38.over.chain lo19to38.fullCpGs.cLifted.bedGraph  e.c.unmap
+liftOver hg19.fullCpGs.bedGraph link/to/file/hg19ToHg38.over.chain  lo19to38.FullCpGs.ucsc.bedGraph unlo19to38.bedGraph
+segment_liftover -l link/to/liftOver -i input/folder/ -o output/folder/ -c link/to/hg19ToHg38.over.chain -si hg19.fullCpGs.bedGraph -so lo19to38.fullCpGs.segment.bedGraph
+```
 <img src="figures/figure3.2.cpgs.png" height="360" width="540">
 
 #### Figure 5. Comparison of *Lifted* (*cLifted* and *lLifted*) and *UCSC liftOver*, *segment_liftover* on Full CpGs (WGBS)
 
 ## Example 2: On ESR1 (ChIPSeq) 
-
-*sh Lifted/bin/lLifted_interval.sh ESR1.hg19ID.bedGraph  hg19ToHg38.over.chain ESR1.lo19to38.lLifted.bedGraph  e.l.unmap*
-
-*sh Lifted/bin/cLifted_interval.sh ESR1.hg19ID.bedGraph  hg19ToHg38.over.chain ESR1.lo19to38.cLifted.bedGraph  e.c.unmap*
-
-*liftOver  ESR1.hg19ID.bedGraph link/to/file/hg19ToHg38.over.chain  ESR1.lo19to38.ucsc.bedGraph unlo19to38.ESR1.bedGraph*
-
-*segment_liftover -l link/to/liftOver -i input/folder/ -o output/folder/ -c link/to/hg19ToHg38.over.chain -si  ESR1.hg19ID.bedGraph -so ESR1.lo19to38.segment.bedGraph*
-
+```
+sh Lifted/bin/lLifted_interval.sh ESR1.hg19ID.bedGraph  hg19ToHg38.over.chain ESR1.lo19to38.lLifted.bedGraph  e.l.unmap
+sh Lifted/bin/cLifted_interval.sh ESR1.hg19ID.bedGraph  hg19ToHg38.over.chain ESR1.lo19to38.cLifted.bedGraph  e.c.unmap
+liftOver  ESR1.hg19ID.bedGraph link/to/file/hg19ToHg38.over.chain  ESR1.lo19to38.ucsc.bedGraph unlo19to38.ESR1.bedGraph
+segment_liftover -l link/to/liftOver -i input/folder/ -o output/folder/ -c link/to/hg19ToHg38.over.chain -si  ESR1.hg19ID.bedGraph -so ESR1.lo19to38.segment.bedGraph
+```
 <img src="figures/figure4.2.chip.png" height="360" width="540">
 
 #### Figure 6. Comparison of *Lifted* (*cLifted* and *lLifted*), *UCSC liftOver* and *segment_liftover* on a ESR1 ChIP-seq sample
